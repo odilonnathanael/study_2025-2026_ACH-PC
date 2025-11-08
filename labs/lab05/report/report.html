@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>report</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<h1 id="отчет-по-лабораторной-работе-5">Отчет по лабораторной работе
+№5</h1>
+<p>*Основы работы с Midnight Commander (mc). Структура программы на
+языке ассемблера NASM. &gt; лиссом байем &gt; ## 1 Цель работы</p>
+<p>Приобретение практических навыков работы в Midnight Commander.
+Освоение инструкций языка ассемблера mov и int. &gt; ## 2 Теоретическое
+введение &gt; Midnight Commander (mc) — это файловый менеджер, который
+позволяет просматривать структуру каталогов и выполнять основные
+операции с файловой системой. Он делает работу с файлами более удобной и
+наглядной. &gt; Программа на языке ассемблера NASM, как правило, состоит
+из трёх секций: секция кода программы (SECTION_text), секция
+инициированных (известных во время компиляции) данных (SECTION.data) и
+секция нениициализированных данных (тех, под которые во время компиляции
+только отводится память, а значение присваивается в ходе выполнения
+программы) (SECTION.bss). &gt; Директивы используют mov_dst,src</p>
+<p>Здесь операнд dst — приёмник, а src — источник. В качестве операнда
+могут выступать регистры (register), ячейки памяти (memory) и
+непосредственные значения (const).</p>
+<p>Инструкция языка ассемблера intпредназначена для вызова прерывания с
+указанным номером <em>int n</em> &gt; ## 3 Выполнение лабораторной
+работы</p>
+<h3 id="основы-работы-с-mc">3.1 Основы работы с mc</h3>
+<blockquote>
+<p>Открываю Midnight Commander, введя в терминал mc (рис. 3.1).</p>
+</blockquote>
+<figure>
+<img src="image/1.jpg" alt="Рис. 3.1: Открытый mc" />
+<figcaption aria-hidden="true">Рис. 3.1: Открытый mc</figcaption>
+</figure>
+<p>Перехожу в каталог ~/work/study/2025-2026/arch-pc, используя файловый
+менеджер mc (рис. 3.2)</p>
+<figure>
+<img src="image/2.jpg" alt="Рис. 3.2: Перемещение между директориями" />
+<figcaption aria-hidden="true">Рис. 3.2: Перемещение между
+директориями</figcaption>
+</figure>
+<p>С помощью функциональной клавиши F7 создаю каталог lab05 и перехожу в
+него (рис. 3.3). &gt; <img src="image/3.jpg"
+alt="Рис. 4.3: Создание каталога" /></p>
+<p>В строке ввода прописываю команду touch lab5-1.asm, чтобы создать
+файл, в котором буду работать (рис. 3.4).</p>
+<figure>
+<img src="image/4.jpg" alt="Рис. 3.4: Создание файла" />
+<figcaption aria-hidden="true">Рис. 3.4: Создание файла</figcaption>
+</figure>
+<h3 id="структура-программы-на-языке-ассемблера-nasm">3.2 Структура
+программы на языке ассемблера NASM</h3>
+<p>С помощью функциональной клавиши F4 открываю созданный файл для
+редактирования в редакторе (рис. 3.5).</p>
+<figure>
+<img src="image/5.jpg"
+alt="Рис. 3.5: Открытие файла для редактирования" />
+<figcaption aria-hidden="true">Рис. 3.5: Открытие файла для
+редактирования</figcaption>
+</figure>
+<p>Ввожу в файл код программы для запроса строки у пользователя (рис.
+3.6). Далее выхожу из файла (Ctrl+X), сохраняя изменения (Y, Enter).С
+помощью функциональной клавиши F3 открываю файл для просмотра, чтобы
+проверить, содержит ли файл текст программы</p>
+<p><img src="image/6.jpg" alt="Рис. 3.6: Редактирование файла" /> &gt;
+Транслирую текст программы файла в объектный файл командой nasm -f elf
+lab5-1.asm. Создался объектный файл lab5-1.o. Выполняю компоновку
+объектного файла с помощью команды ld -m elf_1386 -o lab5-1 lab5-1.o
+(рис. 3.7). Создался исполняемый файл lab5-1.</p>
+<figure>
+<img src="image/7.jpg"
+alt="Рис. 3.7: Компиляция файла и передача на обработку компоновщику" />
+<figcaption aria-hidden="true">Рис. 3.7: Компиляция файла и передача на
+обработку компоновщику</figcaption>
+</figure>
+<p>Запускаю исполняемый файл. Программа выводит строку “Введите строку:”
+и ждет ввода с клавиатуры, я ввожу свои ФИО, на этом программа
+заканчивает свою работу (рис. 3.8).</p>
+<p><img src="image/8.jpg" alt="Рис. 3.8: Исполнение файла" /> &gt; ###
+3.3 Подключение внешнего файла</p>
+<p>Скачиваю файл in_out.asm со страницы курса в ТУИС. Он сохранился в
+каталог “Загрузки” (рис. 3.9).</p>
+<figure>
+<img src="image/9.jpg" alt="Рис. 3.9: Скачанный файл" />
+<figcaption aria-hidden="true">Рис. 3.9: Скачанный файл</figcaption>
+</figure>
+<p>С помощью функциональной клавиши F5 копирую файл in_out.asm из
+каталога Загрузки в созданный каталог lab05 (рис. 3.10).</p>
+<figure>
+<img src="image/10.jpg" alt="Рис. 3.10: Копирование файла" />
+<figcaption aria-hidden="true">Рис. 3.10: Копирование файла</figcaption>
+</figure>
+<p>С помощью функциональной клавиши F5 копирую файл lab5-1 в тот же
+каталог, но с другим именем, для этого в появившемся окне mc прописываю
+имя для копии файла (рис. 3.11).</p>
+<p><img src="image/11.jpg" alt="Рис. 3.11: Копирование файла" /> &gt;
+Изменяю содержимое файла lab5-2.asm во встроенном редакторе (рис. 4.12),
+чтобы в программе использовались подпрограммы из внешнего файла
+in_out.asm.</p>
+<figure>
+<img src="image/12.jpg" alt="Рис. 3.12: Редактирование файла" />
+<figcaption aria-hidden="true">Рис. 3.12: Редактирование
+файла</figcaption>
+</figure>
+<p>Транслирую текст программы файла в объектный файл командой nasm -f
+elf lab5-2.asm. Создался объектный файл lab5-2.o. Выполняю компоновку
+объектного файла с помощью команды ld -m elf_1386 -o lab5-2 lab5-2.o
+Создался исполняемый файл lab5-2. Запускаю исполняемый файл (рис.
+3.13).</p>
+<figure>
+<img src="image/13.jpg"
+alt="Рис. 3.13: Компиляция файла и передача на обработку компоновщику" />
+<figcaption aria-hidden="true">Рис. 3.13: Компиляция файла и передача на
+обработку компоновщику</figcaption>
+</figure>
+<p>Открываю файл lab5-2.asm для редактирования в nano функциональной
+клавишей F4. Изменяю в нем подпрограмму sprintLF на sprint. Сохраняю
+изменения и открываю файл для просмотра, чтобы проверить сохранение
+действий (рис. 3.14).</p>
+<figure>
+<img src="image/14.jpg" alt="Рис. 3.14: Редактирование файла" />
+<figcaption aria-hidden="true">Рис. 3.14: Редактирование
+файла</figcaption>
+</figure>
+<p>Снова транслирую файл, выполняю компоновку созданного объектного
+файла, запускаю новый исполняемый файл (рис. 3.15). <img
+src="image/15.jpg"
+alt="Рис. 3.15: Компиляция файла и передача на обработку компоновщику" />
+&gt; Разница между первым исполняемым файлом и вторым в том, что запуск
+первого запрашивает ввод с новой строки, а программа, которая
+исполняется при запуске второго, запрашивает ввод без переноса на новую
+строку, потому что в этом заключается различие между подпрограммами
+sprintLF и sprint.</p>
+<h3 id="выполнение-заданий-для-самостоятельной-работы">3.4 Выполнение
+заданий для самостоятельной работы</h3>
+<ol type="1">
+<li>Создаю копию файла lab5-1.asm с именем lab5-1-1.asm с помощью
+функциональной клавиши F5 (рис. 3.16).</li>
+</ol>
+<figure>
+<img src="image/16.jpg" alt="Рис. 3.16: Копирование файла" />
+<figcaption aria-hidden="true">Рис. 3.16: Копирование файла</figcaption>
+</figure>
+<p>С помощью функциональной клавиши F4 открываю созданный файл для
+редактирования. Изменяю программу так, чтобы кроме вывода приглашения и
+запроса ввода, она выводила вводимую пользователем строку (рис. 3.17).
+&gt; &gt; <img src="image/17.jpg"
+alt="Рис. 4.17: Редактирование файла" /></p>
+<ol start="2" type="1">
+<li>Создаю объектный файл lab5-1-1.o, отдаю его на обработку
+компоновщику, получаю исполняемый файл lab5-1-1, запускаю полученный
+исполняемый файл. Программа запрашивает ввод, ввожу свои ФИО, далее
+программа выводит введенные мною данные (рис. 4.18).</li>
+</ol>
+<figure>
+<img src="image/18.jpg"
+alt="Рис. 3.18: Компиляция файла и передача на обработку компоновщику" />
+<figcaption aria-hidden="true">Рис. 3.18: Компиляция файла и передача на
+обработку компоновщику</figcaption>
+</figure>
+<p>Код программы из пункта 1:</p>
+<p><em>SECTION .data ;</em> Секция инициированных данных</p>
+<p>msg: DB ‘Введите строку:’,10</p>
+<p>msgLen: EQU $-msg ; Длина переменной ‘msg’ <em>SECTION .bss ;</em>
+Секция не инициированных данных</p>
+<p>buf1: RESB 80 ; Буфер размером 80 байт</p>
+<p><em>SECTION .text ;</em> Код программы</p>
+<p><em>GLOBAL_start ;</em> Начало программы</p>
+<p>start: ; Точка входа в программу <em>mov eax,4 ;</em> Системный вызов
+для записи (sys_write)</p>
+<p><em>mov ebx,1 ;</em> Описатель файла 1 - стандартный вывод</p>
+<p><em>mov ecx,msg ;</em> Адрес строки ‘msg’ в ‘есх’</p>
+<p><em>mov edx,msgLen ;</em> Размер строки ‘msg’ в ‘edх’</p>
+<p><em>int 80h ;</em> Вызов ядра</p>
+<p><em>mov eax, 3 ;</em> Системный вызов для чтения (sys_read)</p>
+<p><em>mov ebx, 0 ;</em> Дескриптор файла 0 - стандартный ввод</p>
+<p><em>mov ecx, buf1 ;</em> Адрес буфера под ввод uniqueую строку</p>
+<p><em>mov edx, 80 ;</em> Длина вводимой строки <em>int 80h ;</em> Вызов
+ядра</p>
+<p><em>mov eax,4 ;</em> Системный вызов для записи (sys_write)</p>
+<p><em>mov ebx,1 ;</em> Описатель файла ‘1’ - стандартный вывод</p>
+<p><em>mov ecx,buf1 ;</em> Адрес строки buff1 в есх</p>
+<p><em>mov edx,buf1 ;</em> Размер строки buff1</p>
+<p><em>int 80h ;</em> Вызов ядра</p>
+<p><em>mov eax,1 ;</em> Системный вызов для выхода (sys_exit)</p>
+<p><em>mov ebx,0 ;</em> Выход с кодом возврата 0 (без ошибок)</p>
+<p><em>int 80h ;</em> Вызов ядра</p>
+<ol start="3" type="1">
+<li>Создаю копию файла lab5-2.asm с именем lab5-2-1.asm с помощью
+функциональной клавиши F5 (рис. 3.19).</li>
+</ol>
+<figure>
+<img src="image/19.jpg" alt="Рис. 3.19: Копирование файла" />
+<figcaption aria-hidden="true">Рис. 3.19: Копирование файла</figcaption>
+</figure>
+<p>С помощью функциональной клавиши F4 открываю созданный файл для
+редактирования. Изменяю программу так, чтобы кроме вывода приглашения и
+запроса ввода, она выводила вводимую пользователем строку (рис. 3.20).
+<a href="image/20.jpg">Рис. 3.20: Редактирую файл</a></p>
+<ol start="4" type="1">
+<li>Создаю объектный файл lab5-2-1.o, отдаю его на обработку
+компоновщику, получаю исполняемый файл lab5-2-1, запускаю полученный
+исполняемый файл. Программа запрашивает ввод без переноса на новую
+строку, ввожу свои ФИО, далее программа выводит введенные мною данные
+(рис. 3.21).</li>
+</ol>
+<p><img src="image/21.jpg"
+alt="Рис. 3.21: Компиляция файла и передача на обработку компоновщику" />
+Код программы из пункта 3:</p>
+<p>%include ‘in_out.asm’</p>
+<p><em>SECTION .data</em> ; Секция инициированных данных msg: DB
+‘Введите строку:’,0h ; сообщение</p>
+<p><em>SECTION .bss</em> ; Секция не инициированных данных buf1: RESB 80
+; Буфер размером 80 байт</p>
+<p><em>SECTION .text</em> ; Код программы</p>
+<p><em>GLOBAL .start</em> ; Начало программы _start: ; Точка входа в
+программу</p>
+<p><em>mov eax, msg</em> ; запись адреса выводимого сообщения в EAX</p>
+<p><em>call sprint</em> ; вызов подпрограммы печати сообщения</p>
+<p><em>mov ecx, buf1</em> ; запись адреса переменной в EAX</p>
+<p><em>mov edx, 80</em> ; запись длины вводимого сообщения в EBX</p>
+<p><em>call sread</em> ; вызов подпрограммы ввода сообщения</p>
+<p><em>mov eax,4</em> ; Системный вызов для записи (sys_write) <em>mov
+ebx,1</em> ; Описатель файла ‘1’ - стандартный вывод</p>
+<p><em>mov ecx,buf1</em> ; Адрес строки buf1 в еса</p>
+<p><em>int 80h</em> ; Вызов ядра</p>
+<p><em>call quit</em> ; вызов подпрограммы завершения ## 4 Выводы</p>
+<p>При выполнении данной лабораторной работы я приобрела практические
+навыки работы в Midnight Commander, а также освоила инструкции языка
+ассемблера mov и int.</p>
+<h2 id="список-литературы">5 Список литературы</h2>
+<ol type="1">
+<li>Лабораторная работа №5</li>
+</ol>
+</body>
+</html>
